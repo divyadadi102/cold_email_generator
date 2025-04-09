@@ -9,7 +9,7 @@ load_dotenv()
 
 class Chain:
     def __init__(self):
-        self.llm = ChatGroq(temperature=0, groq_api_key=os.getenv("GROQ_API_KEY"), model_name="llama-3.1-8b-instant")
+        self.llm = ChatGroq(temperature=0, groq_api_key=os.getenv("GROQ_API_KEY"), model_name="llama-3.3-70b-versatile")
 
     def extract_jobs(self, cleaned_text):
         prompt_extract = PromptTemplate.from_template(
@@ -42,7 +42,7 @@ class Chain:
             You are Divya Dadi, a Master of Computer Science student at Rice University with internship experience as a Software Engineer at Walmart Global Tech and a Junior Data Engineer at Tata Consultancy Services. 
             At Walmart Global Tech, I processed large datasets using Scala and Apache Spark, ensuring high performance and scalability. I also designed and implemented automated data pipelines with Apache Airflow, ensuring timely availability of critical data. 
             Additionally, I leveraged GCP services, such as BigQuery and Google Cloud Storage, for efficient data storage and retrieval. 
-            Your job is to write a cold email to the hiring manager describing your skills and experiences that align with the job requirements. 
+            Your job is to write a cold email to the hiring manager describing and highlighting your skills and experiences that align with the job requirements. 
             Remember you are Divya Dadi, a student and candidate for the position.
             Include link to Divya's LinkedIn: https://www.linkedin.com/in/divya-dadi-9a2539172/, email id dd80@rice.edu
             ### EMAIL (NO PREAMBLE):
